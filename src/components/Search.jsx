@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { getCurrentCompanyJobList } from "../redux/actions";
+import { getCurrentCompanyJobList, addToStore } from "../redux/actions";
 
 const Search = () => {
   const [query, setQuery] = useState();
@@ -21,8 +21,11 @@ const Search = () => {
       <div className="btn-search">
         <Button
           variant="secondary"
-          onClick={() => dispatch(getCurrentCompanyJobList(query))}
-          // onClick={() => dispatch(addToStore(query))}
+          // onClick={() => dispatch(getCurrentCompanyJobList(query))}
+          onClick={() => {
+            dispatch(addToStore(query));
+            dispatch(getCurrentCompanyJobList(query));
+          }}
         >
           Search
         </Button>{" "}

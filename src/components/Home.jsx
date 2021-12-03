@@ -7,18 +7,20 @@ import RecentLocations from "./RecentLocations";
 import AddToStore from "./from";
 
 const Home = () => {
+  const [searcheData, setSearchData] = useState();
   const { currentSearchLocation: currentLocation } = useSelector(
     (state) => state
   );
   const { searchHistoryLocation: data } = useSelector((state) => state);
   useEffect(() => {
-    console.log(data.data);
+    console.log();
+    setSearchData(data.data.slice(0, 1));
   }, [data.data]);
 
   return (
     <>
       <Search />
-      {currentLocation.data ? (
+      {data.data ? (
         <div className="container">
           <div className="weather-side mr-5">
             <div className="weather-gradient" />
@@ -37,7 +39,7 @@ const Home = () => {
                 {Math.round(currentLocation.data.main?.feels_like)}°C
               </h1>
               <h3 className="weather-desc">
-                {/* {currentLocation.data?.weather[0]?.main} */}
+                {currentLocation?.data?.weather[0]?.main}
               </h3>
             </div>
           </div>

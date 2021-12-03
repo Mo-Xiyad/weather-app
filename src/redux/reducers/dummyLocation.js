@@ -9,7 +9,7 @@ const searchHistoryLocationReducer = (
     case ADD_LOCATION:
       return {
         ...state,
-        data: [...state.data, action.payload].reverse(),
+        data: [...state.data, action.payload],
       };
     default:
       return state;
