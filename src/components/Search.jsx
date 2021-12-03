@@ -22,6 +22,7 @@ const Search = () => {
         <Button
           variant="secondary"
           onClick={() => dispatch(getCurrentCompanyJobList(query))}
+          // onClick={() => dispatch(addToStore(query))}
         >
           Search
         </Button>{" "}

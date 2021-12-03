@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { getCurrentCompanyJobList } from "../redux/actions";
 import { dateBuilder, getDay, sunRiseAndSetTIme } from "../helpers";
 import Search from "./Search";
 import RecentLocations from "./RecentLocations";
+import AddToStore from "./from";
 
 const Home = () => {
   const { currentSearchLocation: currentLocation } = useSelector(
     (state) => state
   );
+  const { searchHistoryLocation: data } = useSelector((state) => state);
+  useEffect(() => {
+    console.log(data.data);
+  }, [data.data]);
 
   return (
     <>
       <Search />
-      {currentLocation && (
+      {currentLocation.data ? (
         <div className="container">
           <div className="weather-side mr-5">
             <div className="weather-gradient" />
@@ -22,16 +27,17 @@ const Home = () => {
               <span className="date-day">{dateBuilder(new Date())}</span>
               <i className="location-icon" data-feather="map-pin" />
               <span className="location">
-                {currentLocation.data.name}, {currentLocation.data.sys.country}
+                {currentLocation.data.name},{" "}
+                {currentLocation.data?.sys?.country}
               </span>
             </div>
             <div className="weather-container">
               <i className="weather-icon" data-feather="sun" />
               <h1 className="weather-temp">
-                {Math.round(currentLocation.data.main.feels_like)}°C
+                {Math.round(currentLocation.data.main?.feels_like)}°C
               </h1>
               <h3 className="weather-desc">
-                {currentLocation.data.weather[0]?.main}
+                {/* {currentLocation.data?.weather[0]?.main} */}
               </h3>
             </div>
           </div>
@@ -70,28 +76,28 @@ const Home = () => {
                   <i className="day-icon" data-feather="sun" />
                   <span className="city-name">Lowest Temp</span>
                   <span className="day-temp">
-                    {Math.round(currentLocation.data.main.temp_min)}°C
+                    {Math.round(currentLocation.data.main?.temp_min)}°C
                   </span>
                 </li>
                 <li>
                   <i className="day-icon" data-feather="cloud" />
                   <span className="city-name">Max Temp</span>
                   <span className="day-temp">
-                    {Math.round(currentLocation.data.main.temp_max)}°C
+                    {Math.round(currentLocation.data.main?.temp_max)}°C
                   </span>
                 </li>
                 <li>
                   <i className="day-icon" data-feather="cloud-snow" />
                   <span className="city-name">Sunrise</span>
                   <span className="day-temp">
-                    {sunRiseAndSetTIme(currentLocation.data.sys.sunrise)}
+                    {sunRiseAndSetTIme(currentLocation.data.sys?.sunrise)}
                   </span>
                 </li>
                 <li>
                   <i className="day-icon" data-feather="cloud-rain" />
                   <span className="city-name">Sunset</span>
                   <span className="day-temp">
-                    {sunRiseAndSetTIme(currentLocation.data.sys.sunset)}
+                    {sunRiseAndSetTIme(currentLocation.data.sys?.sunset)}
                   </span>
                 </li>
                 <div className="clear" />
@@ -106,6 +112,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+      ) : (
+        <Search />
       )}
       <RecentLocations />
     </>

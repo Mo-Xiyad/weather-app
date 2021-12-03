@@ -5,6 +5,7 @@ import { encryptTransform } from "redux-persist-transform-encrypt";
 import storage from "redux-persist/lib/storage";
 import currentSearchLocationReducer from "../reducers/currentLocation";
 import locationListReducer from "../reducers/locationList";
+import searchHistoryLocationReducer from "../reducers/dummyLocation";
 
 const workingMiddleware =
   window.window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -20,11 +21,15 @@ export const initialState = {
     isLoading: true,
     isError: false,
   },
+  searchHistoryLocation: {
+    data: [],
+  },
 };
 
 const mainReducer = combineReducers({
   locationList: locationListReducer,
   currentSearchLocation: currentSearchLocationReducer,
+  searchHistoryLocation: searchHistoryLocationReducer,
 });
 
 const persistConfig = {
