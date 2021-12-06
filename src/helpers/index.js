@@ -60,6 +60,6 @@ export const sunRiseAndSetTIme = (d) => {
   let formattedTime = hours + ":" + minutes.substr(-2);
 
   // console.log(formattedTime);
-  console.log(d);
+  // console.log(d);
   return `${hours}: ${minutes.substr(-2)}`;
 };

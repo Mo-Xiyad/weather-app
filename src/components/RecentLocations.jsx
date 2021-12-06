@@ -7,8 +7,8 @@ const RecentLocations = () => {
   const { searchHistoryLocation: data } = useSelector((state) => state);
 
   useEffect(() => {
-    setSearchHistoryData(data.data.reverse().slice(0, 4));
-    console.log(searcheHistoryData);
+    setSearchHistoryData(data.data.slice(0, 4));
+    // console.log(data.data.slice(0, 4));
   }, [data.data]);
   return (
     <>
@@ -17,8 +17,8 @@ const RecentLocations = () => {
           <div className="d-flex justify-content-center mt-5">
             <div className="week-container">
               <ul className="week-list">
-                {searcheHistoryData.map((data) => (
-                  <li className="active mr-5">
+                {searcheHistoryData.map((data, i) => (
+                  <li className="active mr-5" key={i}>
                     <i className="day-icon" data-feather="cloud" />
                     <span className="city-name">{data?.name}</span>
                     <span className="day-temp">

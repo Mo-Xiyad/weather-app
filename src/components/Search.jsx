@@ -21,10 +21,8 @@ const Search = () => {
       <div className="btn-search">
         <Button
           variant="secondary"
-          // onClick={() => dispatch(getCurrentCompanyJobList(query))}
           onClick={() => {
             dispatch(addToStore(query));
-            dispatch(getCurrentCompanyJobList(query));
           }}
         >
           Search

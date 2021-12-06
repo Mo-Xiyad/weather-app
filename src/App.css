@@ -277,3 +277,8 @@ body {
   position: absolute;
   top: 50px;
 }
+
+#map {
+  height: 50%;
+  border: 10px solid rgb(187, 119, 119);
+}

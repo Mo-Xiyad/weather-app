@@ -20,6 +20,7 @@ export const initialState = {
     data: [],
     isLoading: true,
     isError: false,
+    hasData: false,
   },
   searchHistoryLocation: {
     data: [],

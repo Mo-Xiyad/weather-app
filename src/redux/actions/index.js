@@ -2,6 +2,7 @@ export const FETCH_DATA_ERROR = "FETCH_DATA_ERROR";
 export const LOADING_DATA = "LOADING_DATA";
 export const GET_WEATHER_UPDATE_FOR_QUERY = "GET_WEATHER_UPDATE_FOR_QUERY";
 export const ADD_LOCATION = "ADD_LOCATION";
+export const SET_HAS_DATA_TO_TRUE = "SET_HAS_DATA_TO_TRUE";
 // "Östersund";
 export const getCurrentCompanyJobList = (locationQuery) => {
   return async (dispatch) => {
@@ -56,9 +57,16 @@ export const addToStore = (locationQuery) => {
           type: ADD_LOCATION,
           payload: data,
         });
+        dispatch({
+          type: GET_WEATHER_UPDATE_FOR_QUERY,
+          payload: data,
+        });
+        dispatch({
+          type: SET_HAS_DATA_TO_TRUE,
+        });
+      } else {
+        console.log(response);
       }
-
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
