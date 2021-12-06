@@ -1,3 +1,5 @@
+import { AnyAction } from "redux";
+import { IncurrentSearch } from "../../types/IcurrentSearch";
 import {
   GET_WEATHER_UPDATE_FOR_QUERY,
   LOADING_DATA,
@@ -7,13 +9,14 @@ import { initialState } from "../store";
 
 const currentSearchLocationReducer = (
   state = initialState.currentSearchLocation,
-  action
+  action: AnyAction
 ) => {
   switch (action.type) {
     case GET_WEATHER_UPDATE_FOR_QUERY:
       return {
         ...state,
         data: [action.payload],
+        // data: Array<IncurrentSearch>: [action.payload]
       };
     case LOADING_DATA:
       return {

@@ -1,15 +1,16 @@
 import { ADD_LOCATION } from "../actions";
 import { initialState } from "../store";
+import { AnyAction } from "redux";
 
 const searchHistoryLocationReducer = (
   state = initialState.searchHistoryLocation,
-  action
+  action: AnyAction
 ) => {
   switch (action.type) {
     case ADD_LOCATION:
       return {
         ...state,
-        data: [...state.data, action.payload].reverse(),
+        data: [action.payload, ...state.data],
       };
     default:
       return state;

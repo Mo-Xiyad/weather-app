@@ -1,0 +1,27 @@
+{
+  "base": "stations",
+  "clouds": { "all": 90 },
+  "cod": 200,
+  "coord": { "lon": 14.6357, "lat": 63.1792 },
+  "dt": 1638790489,
+  "id": 2685750,
+  "main": {
+    "temp": -11.75,
+    "feels_like": -18.75,
+    "temp_min": -11.75,
+    "temp_max": -11.75,
+    "pressure": 1018
+  },
+  "name": "Östersund",
+  "sys": {
+    "type": 1,
+    "id": 1774,
+    "country": "SE",
+    "sunrise": 1638778771,
+    "sunset": 1638797151
+  },
+  "timezone": 3600,
+  "visibility": 10000,
+  "weather": [{}],
+  "wind": { "speed": 6.17, "deg": 150 }
+}
