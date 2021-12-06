@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { getCurrentCompanyJobList, addToStore } from "../redux/actions";
+import { addToStore } from "../redux/actions";
 
 const Search = () => {
   const [query, setQuery] = useState();

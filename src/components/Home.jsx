@@ -4,7 +4,6 @@ import Search from "./Search";
 import RecentLocations from "./RecentLocations";
 import Card from "./Card";
 import MyComponent from "./Map";
-import { GoLocation } from "react-icons/go";
 const Home = () => {
   const { currentSearchLocation } = useSelector((state) => state);
   const { searchHistoryLocation: data } = useSelector((state) => state);

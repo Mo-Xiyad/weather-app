@@ -9,7 +9,7 @@ const Card = () => {
   useEffect(() => {
     // console.log("here is data", currentSearchLocation.data[0]);
     // console.log("here is data", currentSearchLocation.data);
-    console.log("here is data", data);
+    // console.log("here is data", data);
   }, []);
   return (
     <div className="container">

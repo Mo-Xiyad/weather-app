@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import GoogleMapReact from "google-map-react";
 import { GoLocation } from "react-icons/go";
 import { useSelector } from "react-redux";
