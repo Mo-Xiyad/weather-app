@@ -6,6 +6,7 @@ import Card from "./Card";
 import MyComponent from "./Map";
 import { IncurrentSearch } from "../types/IcurrentSearch";
 import { InititalStates } from "../redux/store";
+
 const Home = () => {
   const { currentSearchLocation } = useSelector(
     (state: InititalStates) => state
@@ -26,8 +27,8 @@ const Home = () => {
           <div className="mt-5">
             <Search />
             <Card />
-            <RecentLocations />
           </div>
+          <RecentLocations />
         </>
       ) : (
         <>

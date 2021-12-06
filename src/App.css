@@ -17,7 +17,7 @@
 body {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: "Montserrat", sans-serif;
   background-color: #343d4b !important;
   display: -webkit-box;
@@ -29,9 +29,10 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
-.container {
+.container-1 {
   border-radius: 25px;
   -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
@@ -131,7 +132,7 @@ body {
 .today-info {
   padding: 15px;
   margin: 0 25px 25px 25px;
-  /* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+  /* box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
   border-radius: 10px;
 }
 
@@ -155,7 +156,6 @@ body {
   -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  /* background: #; */
 }
 
 .week-list > li {
@@ -282,3 +282,43 @@ body {
   height: 50%;
   border: 10px solid rgb(187, 119, 119);
 }
+
+/* RECENT LOCATIONS */
+.recent-loc-div {
+  border: none !important;
+}
+.card-recent {
+  background: rgb(0, 68, 144);
+  background: linear-gradient(
+    166deg,
+    rgba(161, 197, 238, 0.219) 18%,
+    rgb(191, 231, 248) 77%
+  );
+  border-radius: 50px;
+  color: #323233;
+  font-family: "Marcellus", serif;
+}
+
+#heading {
+  font-size: 50px;
+  color: #2b304d;
+}
+
+.temp {
+  place-items: center;
+}
+
+.temp-details > p > span,
+.grey {
+  color: #414246;
+  font-size: 12px;
+}
+
+.fa {
+  color: #a5a5b1;
+}
+
+*:focus {
+  outline: none;
+}
+/* RECENT LOCATIONS */

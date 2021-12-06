@@ -12,7 +12,7 @@ const Card = () => {
     console.log("here is data", data);
   }, []);
   return (
-    <div className="container">
+    <div className="container-1">
       <div className="weather-side mr-5">
         <div className="weather-gradient" />
         <div className="date-container">
@@ -25,7 +25,7 @@ const Card = () => {
         </div>
         <div className="weather-container">
           <i className="weather-icon" data-feather="sun" />
-          <h1 className="weather-temp">{Math.round(data.main?.temp_min)}°C</h1>
+          <h1 className="weather-temp">{Math.round(data.main?.temp)}°C</h1>
           <h3 className="weather-desc">
             {data.weather && data.weather[0].main}
           </h3>

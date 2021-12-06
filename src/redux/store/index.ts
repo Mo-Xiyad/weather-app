@@ -8,8 +8,6 @@ import locationListReducer from "../reducers/locationList";
 import searchHistoryLocationReducer from "../reducers/dummyLocation";
 import { IncurrentSearch } from "../../types/IcurrentSearch";
 import { WebStorage, Transform } from "redux-persist/es/types";
-// import { EncryptorConfig } from "redux-persist-transform-encrypt";
-import { EncryptTransformConfig } from "redux-persist-transform-encrypt";
 
 const workingMiddleware =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -56,9 +54,7 @@ const mainReducer = combineReducers({
 
 interface Ipresist {
   key: string;
-
   storage: WebStorage;
-  // transforms: any
   transforms: Transform<unknown, string, any, any>[];
 }
 
