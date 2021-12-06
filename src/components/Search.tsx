@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToStore } from "../redux/actions";
 
 const Search = () => {
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("");
   const dispatch = useDispatch();
 
   return (

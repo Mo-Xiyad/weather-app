@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { InititalStates } from "../redux/store";
 import { Image } from "react-bootstrap";
-// import { useEffect } from "react";
 
 const RecentLocations = () => {
   //const [searcheHistoryData, setSearchHistoryData] = useState();
-  const { searchHistoryLocation: data } = useSelector((state) => state);
+  const { searchHistoryLocation: data } = useSelector(
+    (state: InititalStates) => state
+  );
 
   return (
     <>

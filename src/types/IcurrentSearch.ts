@@ -25,6 +25,7 @@ export interface Coord {
 
 export interface Main {
   temp: number;
+  humidity: 78;
   feels_like: number;
   temp_min: number;
   temp_max: number;
@@ -39,7 +40,12 @@ export interface Sys {
   sunset: number;
 }
 
-export interface Weather {}
+export interface Weather {
+  description: string;
+  icon: string;
+  id: number;
+  main: string;
+}
 
 export interface Wind {
   speed: number;

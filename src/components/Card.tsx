@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
+import { InititalStates } from "../redux/store";
 import { dateBuilder, getDay, sunRiseAndSetTIme } from "../helpers";
 
 const Card = () => {
-  const { currentSearchLocation } = useSelector((state) => state);
+  const { currentSearchLocation } = useSelector(
+    (state: InititalStates) => state
+  );
   const data = currentSearchLocation.data[0];
   useEffect(() => {
     // console.log("here is data", currentSearchLocation.data[0]);
