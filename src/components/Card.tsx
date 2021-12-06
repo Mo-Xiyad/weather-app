@@ -29,7 +29,7 @@ const Card = () => {
           <i className="weather-icon" data-feather="sun" />
           <h1 className="weather-temp">{Math.round(data.main?.temp)}°C</h1>
           <h3 className="weather-desc">
-            {data.weather && data.weather[0].main}
+            {data.weather && data.weather[0].description}
           </h3>
         </div>
       </div>
